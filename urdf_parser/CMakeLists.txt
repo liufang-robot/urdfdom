@@ -3,7 +3,7 @@ macro(add_urdfdom_library)
   set(multiValueArgs SOURCES LINK)
   cmake_parse_arguments(add_urdfdom_library "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
-  add_library(${add_urdfdom_library_LIBNAME} SHARED
+  add_library(${add_urdfdom_library_LIBNAME} STATIC
     ${add_urdfdom_library_SOURCES})
   target_include_directories(${add_urdfdom_library_LIBNAME} SYSTEM PUBLIC
     ${TinyXML_INCLUDE_DIRS})
